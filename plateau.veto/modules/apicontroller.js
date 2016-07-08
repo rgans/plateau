@@ -26,6 +26,10 @@ ApiController.prototype.validationFaultResult = function(content) {
     return this.result(statusCode.BAD_REQUEST, content);
 };
 
+ApiController.prototype.errorResult = function(content) {
+    return this.result(statusCode.INTERNAL_SERVER_ERROR, content);
+};
+
 ApiController.prototype.okResult = function(content) {
     return this.result(statusCode.OK, content);
 };

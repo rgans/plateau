@@ -36,9 +36,10 @@ Account.prototype.post = function(bm) {
 
     var $t = this;
     user.save(function(error) {
-        var result = {};
+        if(error)
+            return this.errorResult(error);
 
-        return $t.okResult(error);
+        return $t.okResult(user);
     });
 };
 
