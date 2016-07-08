@@ -1,0 +1,19 @@
+{
+  "name": "plateau.veto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/main",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "restify": "*",
+    "connect-mongo": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "mongoose-validators": "*"
+  }
+}

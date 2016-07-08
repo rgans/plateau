@@ -1,0 +1,7 @@
+{
+    "MODEL_VALIDATION": { "type": "model_validation", "message": "Houve alguns erros na validação dos dados informados!" },
+    "NOT_FOUND": { "type": "not_found", "message": "A parada não existe!" },
+    "UNAUTHORIZED": { "type": "unauthorized", "message": "Não autorizado!" },
+    "INVALID_TOKEN": { "type": "invalid_token", "message": "Token inválido!" },
+    "EXPIRED_TOKEN": { "type": "expired_token", "message": "Token expirado!" }
+}

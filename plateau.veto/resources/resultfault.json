@@ -1,0 +1,4 @@
+{
+    "MODEL_VALIDATION": { "type": "model_validation", "message": "Houve alguns erros na validação dos dados informados!" },
+    "NOT_FOUND": "not_found"
+}

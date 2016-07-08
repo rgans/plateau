@@ -1,0 +1,16 @@
+{
+    "DATASOURCE": {
+        "PLATEAU": {
+            "CNNSTRING": "mongodb://localhost/plateau",
+            "OPTIONS": { "replset": { "socketOptions": { "connectTimeoutMS" : 50 }}}
+        }
+    },
+    "AUTHENTICATION": {
+        "ACCESS_TOKEN_HEADER": "plt_token",
+        "AUTH_CHALLENGE_HEADER": "WWW-Authenticate",
+        "AUTH_TYPE": "plt_auth"
+    },
+    "SECURITY": {
+        "DATA_PROTECTION_SECRET": "3zTvzr3p67VC61jmV54rIYu1545x4TlY"
+    }
+}
