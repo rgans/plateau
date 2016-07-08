@@ -26,7 +26,6 @@ Account.prototype.getByKey = function(key) {
 };
 
 Account.prototype.post = function(bm) {
-    console.log(bm);
     var user = new User(bm);
 
     this.validate(user);
