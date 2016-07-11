@@ -2,15 +2,14 @@
 
 var extend = require('util')._extend;
 var path = require('path');
-var resultError = require('../resources/resulterror');
-var statusCode = require('./httpstatuscode');
-var authorize = require('./security/authorize');
+//var resultError = require('../resources/resulterror');
+//var statusCode = require('./httpstatuscode');
+var authorize = require('../http/authorize');
 
-var AccountController = require('../controllers/accountcontroller');
+var AccountController = require('../http/controller/accountcontroller');
 
 var handler = function() {
     this.routeTable = null;
-    this.controllersDir = path.resolve(__dirname, '../controllers');
     
     this._loadRouteTable();
 };
@@ -18,11 +17,20 @@ var handler = function() {
 handler.prototype._loadRouteTable = function() {
     this.routeTable = {
         get: [
-            { route: '/account', controller: AccountController, action: { handler: AccountController.prototype.get } },
-            { route: '/account/:key', controller: AccountController, action: { handler: AccountController.prototype.getByKey } }
+            { route: '/account', controller: AccountController, action: { handler: AccountController.find } },
+            //{ route: '/account/:key', controller: AccountController, action: { handler: AccountController.prototype.findByKey } }
         ],
         post: [
-            { route: '/account', controller: AccountController, action: { handler: AccountController.prototype.post } },
+            //{ route: '/account', controller: AccountController, action: { handler: AccountController.prototype.insert } },
+        ],
+        patch: [
+            //{ route: '/account/:key', controller: AccountController, action: { handler: AccountController.prototype.insert } },
+        ],
+        put: [
+            //{ route: '/account/:key', controller: AccountController, action: { handler: AccountController.prototype.insert } },
+        ],
+        del: [
+            //{ route: '/account/:key', controller: AccountController, action: { handler: AccountController.prototype.remove } },
         ]
     };
 };
@@ -38,14 +46,17 @@ handler.prototype.bind = function(server) {
                 if(routeData.action) {
                     var route = routeData.route;
                     console.log(method, ' ',route);
-                    server[method](route, authorize, function(req, res, next) {
-                        req.controllerContext = { controller: new routeData.controller() };
-                        req.controllerContext.controller.request = req;
-                        req.controllerContext.controller.response = res;
-                        req.actionContext = routeData.action;
+                    server[method](route, authorize, routeData.action.handler);
+                    //function(req, res, next) {
+                        //req.controllerContext = { controller: new routeData.controller() };
+                        //req.controllerContext.controller.request = req;
+                        //req.controllerContext.controller.response = res;
+                        //req.actionContext = routeData.action;
+                        
+                        //req.queryOptions = new QueryOptions(req);
 
-                        return $t._requestHandler(req, res, next);
-                    });
+                        //return $t._requestHandler(req, res, next);
+                    //});
                 }
             });
         }

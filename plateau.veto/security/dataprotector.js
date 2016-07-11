@@ -1,6 +1,6 @@
 'use strict';
 
-var CONFIG = require('../../config');
+var CONFIG = require('../config');
 var stream = require('stream');
 var crypto = require('crypto');
 

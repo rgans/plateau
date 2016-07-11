@@ -8,10 +8,10 @@ var roleSchema = new schema({
     code: {type: String, required: true},
     name: {type: String},
     description: {type: String}
-});
+}, { strict: true });
 
-var entity = { collection_name: 'role' };
+var entity = { collectionName: 'role' };
 
-entity.model = mongoose.model(entity.collection_name, roleSchema);
+entity.model = mongoose.model(entity.collectionName, roleSchema);
 
 module.exports = entity;

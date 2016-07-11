@@ -11,10 +11,11 @@ var addressSchema = new schema({
     city: {type: String, required: true},
     country: {type: String, required: true},
     postcode: {type: String, minlength: 8, maxlength: 8}
-});
+}, { strict: true, _id : false });
 
-var entity = { collection_name: 'address' };
+var entity = { collectionName: 'address' };
 
-entity.model = mongoose.model(entity.collection_name, addressSchema);
+entity.schema = addressSchema;
+entity.model = mongoose.model(entity.collectionName, addressSchema);
 
 module.exports = entity;

@@ -1,6 +1,6 @@
 'use strict';
 
-var resultError = require('../resources/resulterror');
+var resultError = require('../../resources/resulterror');
 
 var handler = function() {
 };

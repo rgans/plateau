@@ -34,8 +34,8 @@ var roleSchema = require('./roleentity');
 var userSchema = require('./userentity');
 
 module.exports = {
-    Contact: mongoose.model(contactSchema.collection_name),
-    Address: mongoose.model(addressSchema.collection_name),
-    Role: mongoose.model(roleSchema.collection_name),
-    User: mongoose.model(userSchema.collection_name),
+    Contact: mongoose.model(contactSchema.collectionName),
+    Address: mongoose.model(addressSchema.collectionName),
+    Role: mongoose.model(roleSchema.collectionName),
+    User: mongoose.model(userSchema.collectionName),
 };

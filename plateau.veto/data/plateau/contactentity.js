@@ -7,10 +7,11 @@ var schema = mongoose.Schema;
 var contactSchema = new schema({
     type: {type: String, required: true, enum: ['email', 'homephone', 'workphone', 'cellphone', 'whatsapp']},
     value: {type: String, required: true}
-});
+}, { strict: true, _id : false });
 
-var entity = { collection_name: 'contact' };
+var entity = { collectionName: 'contact' };
 
-entity.model = mongoose.model(entity.collection_name, contactSchema);
+entity.schema = contactSchema;
+entity.model = mongoose.model(entity.collectionName, contactSchema);
 
 module.exports = entity;

@@ -1,6 +1,6 @@
 'use strict';
 
-var statusCode = require('../httpstatuscode');
+var statusCode = require('./httpstatuscode');
 var resultError = require('../../resources/resulterror');
 
 var authorize = function(req, res, next) {

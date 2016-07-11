@@ -1,10 +1,10 @@
 'use strict';
 
 var restify = require('restify');
-var routeHandler = require('../modules/routehandler');
-var errorHandler = require('../modules/errorhandler');
-var logHandler = require('../modules/loghandler');
-var authHandler = require('../modules/security/authenticationhandler');
+var routeHandler = require('../network/handlers/routehandler');
+var errorHandler = require('../network/handlers/errorhandler');
+var logHandler = require('../network/handlers/loghandler');
+var authHandler = require('../network/handlers/authenticationhandler');
 
 var server = restify.createServer({
     name: 'myapp',
@@ -81,6 +81,13 @@ server.get('/hello/:name', function(req, res, next) {
 });
 */
 
+module.globals.path = {
+    security: {
+        user : __dirname + '../security/user'
+    }
+};
+
+var asd = require(module.path.security.user);
 server.listen(8080, function () {
     console.log('%s listening at %s', server.name, server.url);
 });
