@@ -1,7 +1,7 @@
 'use strict';
 
 var extend = require('util')._extend;
-var Identity = require('./identity');
+var Identity = require(__path.security.identity);
 
 var ticket = function(identity, properties) {
     this.identity = identity;

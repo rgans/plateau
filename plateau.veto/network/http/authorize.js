@@ -1,7 +1,7 @@
 'use strict';
 
-var statusCode = require('./httpstatuscode');
-var resultError = require('../../resources/resulterror');
+var statusCode = require(__path.network.http.httpstatuscode);
+var resultError = require(__path.resources.resulterror);
 
 var authorize = function(req, res, next) {
     console.log('user authenticated: ', req.user.identity.isAuthenticated);

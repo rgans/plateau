@@ -1,7 +1,7 @@
 'use strict';
 
-var DataSerializer = require('./dataserializer');
-var DataProtector = require('./dataprotector');
+var DataSerializer = require(__path.security.dataserializer);
+var DataProtector = require(__path.security.dataprotector);
 
 var protectorName = __filename.slice(__dirname.length + 1, -3);
 var protectorPurposes = 'AuthenticationToken';

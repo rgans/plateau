@@ -1,8 +1,8 @@
 'use strict';
 
-var ModelState = require('./modelstate');
-var ActionResult = require('./serviceresult');
-var resultError = require('../../../resources/resulterror');
+var ModelState = require(__path.data.plateau.service.modelstate);
+var ActionResult = require(__path.data.plateau.service.serviceresult);
+var resultError = require(__path.resources.resulterror);
 
 function DataManager() {
     this.modelState = new ModelState();

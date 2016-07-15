@@ -1,6 +1,6 @@
 'use strict';
 
-var Identity = require('./identity');
+var Identity = require(__path.security.identity);
 
 var user = function(identity, roles) {
     this.identity = identity;

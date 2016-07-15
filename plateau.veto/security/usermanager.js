@@ -1,7 +1,7 @@
 'use strict';
 
 var extend = require('util')._extend;
-var repository = require('../../datasource/plateau/repository');
+var repository = require(__path.data.plateau.repository);
 var User = repository.User;
 
 var UserManager = function() {

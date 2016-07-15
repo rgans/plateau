@@ -2,8 +2,8 @@
 
 var util = require('util');
 var extend = require('util')._extend;
-var DataService = require('./dataservice');
-var repository = require('../repository');
+var DataService = require(__path.data.plateau.service.dataservice);
+var repository = require(__path.data.plateau.repository);
 var User = repository.User;
 
 function Account() {

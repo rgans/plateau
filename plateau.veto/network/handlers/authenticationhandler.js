@@ -1,11 +1,11 @@
 'use strict';
 
-var CONFIG = require('../../config');
-var tokenProvider = require('../../security/accesstokenprovider');
-var statusCode = require('../http/httpstatuscode');
-var resultError = require('../../resources/resulterror');
-var User = require('../../security/user');
-var Identity = require('../../security/identity');
+var CONFIG = require(__path.config);
+var tokenProvider = require(__path.security.accesstokenprovider);
+var statusCode = require(__path.network.http.httpstatuscode);
+var resultError = require(__path.resources.resulterror);
+var User = require(__path.security.user);
+var Identity = require(__path.security.identity);
 //var userManager = require('./usermanager');
 
 var handler = function() {

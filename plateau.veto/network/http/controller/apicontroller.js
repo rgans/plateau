@@ -1,9 +1,9 @@
 'use strict';
 
-var ModelState = require('./modelstate');
-var ActionResult = require('./actionresult');
-var statusCode = require('./httpstatuscode');
-var resultError = require('../resources/resulterror');
+var ModelState = require(__path.data.plateau.service.modelstate);
+var ActionResult = require(__path.data.plateau.service.serviceresult);
+var statusCode = require(__path.network.http.httpstatuscode);
+var resultError = require(__path.resources.resulterror);
 
 function ApiController() {
     this.modelState = new ModelState();

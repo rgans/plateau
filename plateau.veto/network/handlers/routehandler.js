@@ -4,9 +4,9 @@ var extend = require('util')._extend;
 var path = require('path');
 //var resultError = require('../resources/resulterror');
 //var statusCode = require('./httpstatuscode');
-var authorize = require('../http/authorize');
+var authorize = require(__path.network.http.authorize);
 
-var AccountController = require('../http/controller/accountcontroller');
+var AccountController = require(__path.network.http.controller.accountcontroller);
 
 var handler = function() {
     this.routeTable = null;
